@@ -1,0 +1,14 @@
+if [ -f /proc ]; then
+    source .aliases.linux
+fi
+if [ -f /mach_kernel ]; then
+    source .aliases.mac
+fi
+
+# Fixes globbing issues when using Rake
+alias rake='noglob rake'
+alias scp='noglob scp'
+alias chaws="source ~/.aws-profile"
+alias vagrant="PATH=/opt/chefdk/bin:$PATH vagrant"
+
+chprof () { export $(craftsman profile $1) }

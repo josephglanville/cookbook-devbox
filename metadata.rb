@@ -1,0 +1,5 @@
+name 'devbox'
+version '0.1'
+depends 'apt'
+depends 'git'
+depends 'rvm'
