@@ -3,7 +3,8 @@
 
 VAGRANTFILE_API_VERSION = '2'
 
-NODE_MEM = 512
+NODE_MEM = 2048
+NODE_CPU = 8
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Would be great if there was an official box with both
@@ -17,6 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provider :vmware_fusion do |v|
     v.vmx['memsize'] = NODE_MEM
+    v.vmx['numvcpus'] = NODE_CPU
   end
 
   config.vm.provision 'chef_solo' do |chef|
